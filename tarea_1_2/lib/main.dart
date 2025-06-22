@@ -19,9 +19,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
-            ),
+            SizedBox(height: 100),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -29,7 +27,7 @@ class _MyAppState extends State<MyApp> {
                   "Welcome to \n Reminders",
                   style: TextStyle(fontSize: 35, fontWeight: FontWeight.w700),
                 ),
-                Padding(padding: const EdgeInsets.all(10)),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,19 +38,39 @@ class _MyAppState extends State<MyApp> {
                         //Icono cuadruple:
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Icon(Icons.camera_alt),
-                                Icon(Icons.camera_alt),
-                              ],
+                            SizedBox(
+                              width: 60,
+                              height: 60,
+                              child: Row(
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.check_circle,
+                                        color: Colors.green,
+                                      ),
+                                      Icon(
+                                        Icons.access_time_filled_outlined,
+                                        color: Colors.green,
+                                      ),
+                                    ],
+                                  ),
+                                  //SizedBox(width: 4),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.flag, color: Colors.green),
+                                      Icon(
+                                        Icons.camera_alt,
+                                        color: Colors.green,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                            //SizedBox(width: 4),
-                            Column(
-                              children: [
-                                Icon(Icons.camera_alt),
-                                Icon(Icons.camera_alt),
-                              ],
-                            ),
+                            //Espacio entre los iconos y el texto.
                             SizedBox(width: 8),
                             //Bloque de informacion
                             Column(
@@ -82,7 +100,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ],
             ),
-            Padding(padding: const EdgeInsets.all(10)),
+            SizedBox(height: 36),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +111,15 @@ class _MyAppState extends State<MyApp> {
                     //Icono cuadruple:
                     Row(
                       children: [
-                        Icon(Icons.shopping_cart_rounded),
+                        SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: Icon(
+                            Icons.shopping_cart_rounded,
+                            size: 40,
+                            color: Colors.orange,
+                          ),
+                        ),
                         SizedBox(width: 8),
                         //Bloque de informacion
                         Column(
@@ -121,7 +147,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ],
             ),
-            Padding(padding: const EdgeInsets.all(10)),
+            SizedBox(height: 36),
             //Grocery Shopping
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -133,21 +159,30 @@ class _MyAppState extends State<MyApp> {
                     //Icono cuadruple:
                     Row(
                       children: [
-                        Icon(Icons.shopping_cart_rounded),
+                        SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: Icon(
+                            Icons.group,
+                            size: 40,
+                            color: Colors.yellow[700],
+                          ),
+                        ),
+
                         SizedBox(width: 8),
                         //Bloque de informacion
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Quick Creation",
+                              "Easy Sharing",
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 16,
                               ),
                             ),
                             Text(
-                              "Simple type in your list, ask Siri, or add a \nreminder from your Calendar app.",
+                              "Collaborate on a list, and even assign     \nindividual task.",
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 color: Colors.black54,
@@ -161,7 +196,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ],
             ),
-            Padding(padding: const EdgeInsets.all(10)),
+            SizedBox(height: 36),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,33 +207,30 @@ class _MyAppState extends State<MyApp> {
                     //Icono cuadruple:
                     Row(
                       children: [
-                        Column(
-                          children: [
-                            Icon(Icons.camera_alt),
-                            Icon(Icons.camera_alt),
-                          ],
+                        SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: Icon(
+                            Icons.dashboard,
+                            size: 50,
+                            color: Colors.blue,
+                          ),
                         ),
-                        //SizedBox(width: 4),
-                        Column(
-                          children: [
-                            Icon(Icons.camera_alt),
-                            Icon(Icons.camera_alt),
-                          ],
-                        ),
+
                         SizedBox(width: 8),
                         //Bloque de informacion
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Quick Creation",
+                              "Powerful Organization",
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 16,
                               ),
                             ),
                             Text(
-                              "Simple type in your list, ask Siri, or add a \nreminder from your Calendar app.",
+                              "Create new list to match your needs,      \ncategorize reminders with tags, and \nmanage reminders around your work\nflow with Smart List.",
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 color: Colors.black54,
@@ -213,6 +245,21 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
           ],
+        ),
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
+          child: SizedBox(
+            width: 350,
+            height: 50,
+            child: FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Colors.blue,
+              child: Text(
+                "Continue",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ),
+          ),
         ),
       ),
     );
