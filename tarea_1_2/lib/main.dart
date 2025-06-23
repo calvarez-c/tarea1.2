@@ -16,6 +16,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //Propiedad para quitar el rotulo debug en desarrollo.
+      debugShowCheckedModeBanner: false,
       title: "Reminder",
       home: Scaffold(
         body: Column(
