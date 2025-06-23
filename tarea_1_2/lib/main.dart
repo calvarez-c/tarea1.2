@@ -257,7 +257,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
-        //Nos ayuda a centrar de manera dinamica el boton
+        //Nos ayuda a centrar de manera dinamica el boton.
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Padding(
           //Padding para dar altura al boton respecto al limite inferior.
