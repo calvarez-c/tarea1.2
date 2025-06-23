@@ -11,6 +11,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+//Carlos Alfredo Alvarez Colindres - 20222030195
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
@@ -18,81 +19,80 @@ class _MyAppState extends State<MyApp> {
       title: "Reminder",
       home: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            //SizeBox que funciona como un header para separar el Text() de la parte superior.
             SizedBox(height: 100),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            Text(
+              "Welcome to \n Reminders",
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.w700),
+            ),
+            //Separacion del header con los bloques de informacion
+            SizedBox(height: 30),
+            //Bloque de Quick Creation
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Welcome to \n Reminders",
-                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Column(
                   children: [
-                    //Bloque total de informacion
-                    Column(
+                    Row(
                       children: [
-                        //Icono cuadruple:
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: 60,
-                              height: 60,
-                              child: Row(
+                        //Caja de iconos:
+                        SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: Row(
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.check_circle,
-                                        color: Colors.green,
-                                      ),
-                                      Icon(
-                                        Icons.access_time_filled_outlined,
-                                        color: Colors.green,
-                                      ),
-                                    ],
+                                  Icon(
+                                    Icons.access_time_filled_outlined,
+                                    color: Colors.green,
                                   ),
-                                  //SizedBox(width: 4),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.flag, color: Colors.green),
-                                      Icon(
-                                        Icons.camera_alt,
-                                        color: Colors.green,
-                                      ),
-                                    ],
+                                  Icon(Icons.flag, color: Colors.green),
+                                ],
+                              ),
+                              //SizedBox(width: 4),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.camera_alt, color: Colors.green),
+                                  Icon(
+                                    Icons.navigation_rounded,
+                                    color: Colors.green,
                                   ),
                                 ],
                               ),
-                            ),
-                            //Espacio entre los iconos y el texto.
-                            SizedBox(width: 8),
-                            //Bloque de informacion
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Quick Creation",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 16,
-                                  ),
+                            ],
+                          ),
+                        ),
+                        //Caja de titulo y contenido
+                        SizedBox(
+                          //SizedBox para dar un formato alineado al texto respecto al SizedBox de los iconos.
+                          width: 280,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              //Titulo
+                              Text(
+                                "Quick Creation",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 16,
                                 ),
-                                Text(
-                                  "Simple type in your list, ask Siri, or add a \nreminder from your Calendar app.",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black54,
-                                  ),
+                              ),
+                              //Contenido
+                              Text(
+                                "Simple type in your list, ask Siri, or add a reminder from your Calendar app.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black54,
                                 ),
-                              ],
-                            ),
-                          ],
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -101,14 +101,13 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             SizedBox(height: 36),
+            //Bloque de Grocery Shopping
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Bloque total de informacion
                 Column(
                   children: [
-                    //Icono cuadruple:
                     Row(
                       children: [
                         SizedBox(
@@ -120,26 +119,30 @@ class _MyAppState extends State<MyApp> {
                             color: Colors.orange,
                           ),
                         ),
-                        SizedBox(width: 8),
-                        //Bloque de informacion
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Grocery Shopping",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16,
+                        //Titulo y contenido
+                        SizedBox(
+                          width: 280,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              //Titulo
+                              Text(
+                                "Grocery Shopping",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
-                            Text(
-                              "Create a Grocery List that automatically \nsorts items you add by category.",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black54,
+                              //Contenido
+                              Text(
+                                "Create a Grocery List that automatically sorts items you add by category.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black54,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -148,17 +151,16 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             SizedBox(height: 36),
-            //Grocery Shopping
+            //Bloque de Easy Sharing
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Bloque total de informacion
                 Column(
                   children: [
-                    //Icono cuadruple:
                     Row(
                       children: [
+                        //Caja de icono
                         SizedBox(
                           width: 60,
                           height: 60,
@@ -169,26 +171,30 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ),
 
-                        SizedBox(width: 8),
-                        //Bloque de informacion
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Easy Sharing",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16,
+                        //Caja de titulo y contenido
+                        SizedBox(
+                          width: 280,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              //Titulo
+                              Text(
+                                "Easy Sharing",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
-                            Text(
-                              "Collaborate on a list, and even assign     \nindividual task.",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black54,
+                              //Contenido
+                              Text(
+                                "Collaborate on a list, and even assign individual task.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black54,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -197,16 +203,16 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             SizedBox(height: 36),
+            //Bloque de Powerful Organization
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Bloque total de informacion
                 Column(
                   children: [
-                    //Icono cuadruple:
                     Row(
                       children: [
+                        //Caja de icono
                         SizedBox(
                           width: 60,
                           height: 60,
@@ -217,26 +223,31 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ),
 
-                        SizedBox(width: 8),
-                        //Bloque de informacion
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Powerful Organization",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16,
+                        //Caja de titulo y contenido
+                        SizedBox(
+                          width: 280,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              //Titulo
+                              Text(
+                                "Powerful Organization",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
-                            Text(
-                              "Create new list to match your needs,      \ncategorize reminders with tags, and \nmanage reminders around your work\nflow with Smart List.",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black54,
+                              //Contenido
+                              Text(
+                                "Create new list to match your needs, categorize reminders with tags, and manage reminders around your work flow with Smart List.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black54,
+                                ),
+                                textAlign: TextAlign.justify,
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -246,9 +257,13 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
+        //Nos ayuda a centrar de manera dinamica el boton
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
+          //Padding para dar altura al boton respecto al limite inferior.
+          padding: const EdgeInsets.only(bottom: 80),
           child: SizedBox(
+            //El sizedbox nos ayuda a dar forma de manera rectangular en nuestro boton.
             width: 350,
             height: 50,
             child: FloatingActionButton(
